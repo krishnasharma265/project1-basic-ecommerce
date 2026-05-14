@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Mouse",
+    "description": "Ergonomic wireless mouse with USB receiver",
+    "price": 599,
+    "stock": 120,
+    "category": "Electronics",
+    "brand": "LogiTech",
+    "rating": 4.3,
+    "is_available": true
+  },
+  {
+    "id": 2,
+    "name": "Mechanical Keyboard",
+    "description": "RGB mechanical keyboard with blue switches",
+    "price": 2499,
+    "stock": 75,
+    "category": "Electronics",
+    "brand": "RedGear",
+    "rating": 4.5,
+    "is_available": true
+  },
+  {
+    "id": 3,
+    "name": "Running Shoes",
+    "description": "Lightweight running shoes for daily workouts",
+    "price": 1999,
+    "stock": 50,
+    "category": "Footwear",
+    "brand": "Nike",
+    "rating": 4.2,
+    "is_available": true
+  },
+  {
+    "id": 4,
+    "name": "Water Bottle",
+    "description": "1L stainless steel insulated water bottle",
+    "price": 499,
+    "stock": 200,
+    "category": "Home & Kitchen",
+    "brand": "Milton",
+    "rating": 4.0,
+    "is_available": true
+  },
+  {
+    "id": 5,
+    "name": "Backpack",
+    "description": "Durable backpack with multiple compartments",
+    "price": 1299,
+    "stock": 90,
+    "category": "Accessories",
+    "brand": "Skybags",
+    "rating": 4.4,
+    "is_available": true
+  },
+  {
+    "id": 6,
+    "name": "Smartphone",
+    "description": "6.5 inch display, 128GB storage smartphone",
+    "price": 14999,
+    "stock": 30,
+    "category": "Electronics",
+    "brand": "Samsung",
+    "rating": 4.6,
+    "is_available": true
+  },
+  {
+    "id": 7,
+    "name": "Bluetooth Speaker",
+    "description": "Portable speaker with deep bass",
+    "price": 1799,
+    "stock": 60,
+    "category": "Electronics",
+    "brand": "JBL",
+    "rating": 4.5,
+    "is_available": true
+  },
+  {
+    "id": 8,
+    "name": "Notebook",
+    "description": "200 pages ruled notebook",
+    "price": 99,
+    "stock": 300,
+    "category": "Stationery",
+    "brand": "Classmate",
+    "rating": 4.1,
+    "is_available": true
+  },
+  {
+    "id": 9,
+    "name": "Office Chair",
+    "description": "Ergonomic chair with lumbar support",
+    "price": 5499,
+    "stock": 25,
+    "category": "Furniture",
+    "brand": "GreenSoul",
+    "rating": 4.3,
+    "is_available": true
+  },
+  {
+    "id": 10,
+    "name": "LED Monitor",
+    "description": "24 inch full HD LED monitor",
+    "price": 8999,
+    "stock": 40,
+    "category": "Electronics",
+    "brand": "LG",
+    "rating": 4.6,
+    "is_available": true
+  }
+]
