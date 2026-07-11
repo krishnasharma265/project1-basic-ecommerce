@@ -1,6 +1,5 @@
 from fastapi import FastAPI,Request,HTTPException
 from app.routes import routes,auth
-from app.models import user
 from app.data.connection import init_db
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
