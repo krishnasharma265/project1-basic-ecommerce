@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from app.models import product
 from app.models.product import Product
 from app.schema.product import ProductSchema,ProductCreate,ProductUpdate,ProductResponse
-from app.data.connection import get_db
+from app.data.connection import get_write_db,get_read_db
 from app.services.auth import get_current_user
 from app.services.product_services import get_product_list,add_product,delete_product,update_pdt
 from app.schema.response import APIResponse
@@ -26,7 +26,7 @@ def home():
 @router.get("/my-products")
 def get_my_products(
     user = Depends(get_current_user),
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_read_db)
 ):
     
     products = db.query(product.Product).filter(
@@ -45,7 +45,7 @@ def get_my_products(
 #products by name
 @router.get("/products")
 def list_products(user=Depends(get_current_user),
-    db:Session=Depends(get_db),
+    db:Session=Depends(get_read_db),
     name:str=Query(default=None,min_length=1,max_length=50,description="search product by name"),
     sort_by_price:bool=Query(default=False,description="sort by price"),
     order:str=Query(default="asc",description="sort_by_price(asc,desc)"),
@@ -59,17 +59,17 @@ def list_products(user=Depends(get_current_user),
 #add new product
 @router.post("/product",response_model=APIResponse[ProductSchema])
 def add_new_product( 
-    product:ProductCreate ,user = Depends(get_current_user), db:Session=Depends(get_db)):
+    product:ProductCreate ,user = Depends(get_current_user), db:Session=Depends(get_write_db)):
     return add_product(product=product,user=user,db=db)
 
 #delete by id
 @router.delete("/product/{id}",response_model=APIResponse[ProductSchema])
-def dlt_product(id:int, user = Depends(get_current_user),db:Session=Depends(get_db)):
+def dlt_product(id:int, user = Depends(get_current_user),db:Session=Depends(get_write_db)):
     return delete_product(id=id,user=user,db=db)
 
 
 @router.patch("/product/{id}",response_model=APIResponse[ProductSchema])
-def update_product( id:int,upd_product:ProductUpdate ,user = Depends(get_current_user),db:Session=Depends(get_db)):
+def update_product( id:int,upd_product:ProductUpdate ,user = Depends(get_current_user),db:Session=Depends(get_write_db)):
     return update_pdt(db=db,upd_product=upd_product,id=id,user=user)
 
 
