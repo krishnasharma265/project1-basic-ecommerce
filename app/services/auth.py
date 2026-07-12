@@ -5,7 +5,7 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi import HTTPException,Depends
 from app.models.user import User
 from sqlalchemy.orm import Session
-from app.data.connection import get_db
+from app.data.connection import get_read_db
 from app.core.config import SECRET_KEY,ALGORITHM
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -34,7 +34,7 @@ def verify_token(token: str):
 security = HTTPBearer()
 
 def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(security)
-                     ,db:Session=Depends(get_db)):
+                     ,db:Session=Depends(get_read_db)):
     # token = credentials.credentials
     # return verify_token(token)
     

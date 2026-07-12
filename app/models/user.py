@@ -13,5 +13,5 @@ class User(Base):
     products = relationship("Product", back_populates="owner")
 
     #roles
-    role=Column(String,index=True,default="Customer")
+    role=Column(String,default="Customer")
 
